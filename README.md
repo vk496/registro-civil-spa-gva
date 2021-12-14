@@ -12,6 +12,51 @@ pip3 install -r requirements.txt
 La descripción de todos los parámetros se puede obtener ejecutando:
 ```
 $ python cita_gva.py --help
+usage: cita_gva.py [-h] [-v] [-p [PROVINCIA]] [-m [MUNICIPIO]] [-s [SERVICIO]]
+                   -d DNI -n NOMBRE -a1 APELLIDO1 [-a2 APELLIDO2] -f FECHA
+                   [-x CITAMIN] [-y CITAMAX] [-z HORAOBJETIVO] -o OUTPUT
+                   [-w WAIT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --verbose         Incrementa la verbosidad (default: 3)
+
+Obligatorios:
+  -p [PROVINCIA], --provincia [PROVINCIA]
+                        Nombre de provincia. Vacío para consultar valores
+                        posibles (default: None)
+  -m [MUNICIPIO], --municipio [MUNICIPIO]
+                        Nombre de municipio. Vacío para consultar valores
+                        posibles (default: None)
+  -s [SERVICIO], --servicio [SERVICIO]
+                        Motivo de la cita. Vacío para consultar valores
+                        posibles (default: None)
+  -d DNI, --dni DNI     DNI/NIE (default: None)
+  -n NOMBRE, --nombre NOMBRE
+                        Nombre (default: None)
+  -a1 APELLIDO1, --apellido1 APELLIDO1
+                        Primer apellido (default: None)
+  -f FECHA, --fecha FECHA
+                        Fecha de nacimiento (dd/mm/YYYY) (default: None)
+  -o OUTPUT, --output OUTPUT
+                        fichero PDF de la cita confirmada (default: None)
+
+Opcionales:
+  -a2 APELLIDO2, --apellido2 APELLIDO2
+                        Segundo apellido (default: None)
+  -x CITAMIN, --citamin CITAMIN
+                        Fecha mínima de la cita (dd/mm/YYYY). Citas anteriores
+                        a dicha fecha serán ignoradas (default: 2021-12-14
+                        01:30:38.810895)
+  -y CITAMAX, --citamax CITAMAX
+                        Fecha máxima de la cita (dd/mm/YYYY). Citas
+                        posteriores a dicha fecha serán ignoradas (default:
+                        None)
+  -z HORAOBJETIVO, --horaobjetivo HORAOBJETIVO
+                        Hora cita (HH:MM). Se usará como preferencia para
+                        escoger en caso de haber más de una cita disponible
+                        (default: None)
+  -w WAIT, --wait WAIT  Tiempo de espera entre solicitudes (default: 30)
 ```
 
 Los parámetros mínimos son:
